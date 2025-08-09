@@ -1,0 +1,236 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Vibrant gradient */
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+    50% { background: linear-gradient(135deg, #86a8e7, #91eae4); }
+    100% { background: linear-gradient(135deg, #ff7e5f, #feb47b); }
+}
+
+
+header {
+    background: linear-gradient(90deg, #35424a, #45a049);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #35424a;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+}
+
+section {
+    background: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.7); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 10px;
+    animation: fadeIn 0.5s;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Button Styles */
+button {
+    background-color: #45a049;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #3c8c3a;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section {
+        margin: 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Link Styles */
+a {
+    color: #35424a; /* Base color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
+    position: relative; /* Position for pseudo-element */
+}
+
+a::after {
+    content: ''; /* Create a pseudo-element */
+    display: block;
+    width: 0; /* Start with no width */
+    height: 2px; /* Height of the underline */
+    background: #45a049; /* Color of the underline */
+    transition: width 0.3s; /* Smooth transition for width */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to the left */
+    bottom: -5px; /* Position below the text */
+}
+
+a:hover {
+    color: #ffcc00; /* Change color on hover */
+    transform: translateY(-2px); /* Slightly lift the link */
+}
+
+a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: absolute;
+    background-color: #35424a; /* Background color */
+    color: #ffffff; /* Text color */
+    padding: 5px 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 0.9em; /* Font size */
+    z-index: 1000; /* Ensure it appears above other elements */
+    transition: opacity 0.3s; /* Smooth transition for opacity */
+    opacity: 0.9; /* Slightly transparent */
+}
+/* List Item Styles */
+li {
+    margin-bottom: 15px; /* Add space below each list item */
+}
+/* Optional: Remove margin from the last list item */
+li:last-child {
+    margin-bottom: 0; /* Remove margin from the last item */
+}
